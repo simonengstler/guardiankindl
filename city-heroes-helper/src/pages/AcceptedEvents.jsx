@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import MoreDetails from './MoreDetails';
+import React from 'react';
 import {Link, Route} from "react-router-dom";
 
 const AcceptedEvents = () => {

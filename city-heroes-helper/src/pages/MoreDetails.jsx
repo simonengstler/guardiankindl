@@ -40,7 +40,7 @@ const MoreDetails = () => {
                 <img src={icon} alt="icon" style={{ height: '40px', width: '40px' }} />
                 <h1>Event-Details</h1>
             </header>
-                <div className="event-tile">
+                <div className="detail-tile">
                     <ul>
                         <li>Location: {ourEvents[customString]['street']}</li>
                         <li>Helpers: {ourEvents[customString]['helpersRegistered']}</li>

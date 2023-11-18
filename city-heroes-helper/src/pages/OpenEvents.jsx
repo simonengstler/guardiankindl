@@ -1,6 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import {getAllEvents} from '../assets/store';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getAllEvents } from '../assets/store';
+
+import accept from '../assets/accept.png';
+import decline from '../assets/decline.png';
+import more from '../assets/more.png';
 
 const OpenEvents = () => {
     const [events, setEvents] = useState(getAllEvents());
@@ -26,31 +30,33 @@ const OpenEvents = () => {
 
     return (
         <div>
+            <h1>Open Events</h1>
             {Object.entries(events).length > 0 ? (
                 Object.entries(events).map(([key, value]) => (
                     <div key={key} className="event-tile my-4 p-6 border border-gray-200 rounded-lg text-center bg-white">
-                        <h3 className="text-xl font-semibold mb-4">{value.titel}</h3>
+                        <h2 className="text-xl font-semibold mb-4">{value.titel}</h2>
                         <p className="text-md text-gray-700">Distance: {value.distance}</p>
-                        <div className="flex justify-center mt-4 space-x-4">
-                            <button
-                                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
+                        <div className="buttons">
+                            <button>
                                 <Link to="/more-details" state={{ customString: key }}>
-                                    More details
+                                    <img src={more} alt="More" />
                                 </Link>
                             </button>
                             {value.accepted ? (
-                                <button onClick={() => value.accepted = false}>Cancel</button>
+                                <button onClick={() => value.accepted = false}><img src={decline} alt="Cancel" /></button>
                             ) : (
                                 <>
                                     <button
-                                        className="bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-600 transition duration-300"
-                                        onClick={() => value.accepted = true}>
-                                        Accept
+                                        className="bg-green-500 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300"
+                                        onClick={() => { value.accepted = true }}
+                                    >
+                                        <img src={accept} alt="Accept" />
                                     </button>
+
                                     <button
                                         className="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition duration-300"
                                         onClick={() => value.accepted = false}>
-                                        Decline
+                                        <img src={decline} alt="Cancel" />
                                     </button>
                                 </>
                             )}

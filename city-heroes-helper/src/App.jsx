@@ -67,11 +67,6 @@ const App = () => {
                     <Link to="/open-events"><img src={current} alt = "current" /></Link>
                     <Link to="/profile"><img src={profile} alt = "profile" /></Link>
                 </footer>
-                {showNotification && (
-                    <div className="notification-container">
-                        <NotificationModal event={receivedEvent} onClose={closeNotification}/>
-                    </div>
-                )}
             </div>
         </Router>
     );

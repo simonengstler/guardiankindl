@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllEvents } from '../assets/store';
 
-import accept from '../assets/accept.png';
-import decline from '../assets/decline.png';
+import more from '../assets/more.png';
+import cancel from '../assets/cancel.png';
 
 const AcceptedEvents = () => {
     const [events, setEvents] = useState(getAllEvents());
@@ -33,12 +33,14 @@ const AcceptedEvents = () => {
                 Object.values(events).map((value) => {
                     return value.accepted ? (
                         <div key={value.titel} className="event-tile">
-                            <h3>{value.titel}</h3>
+                            <h2>{value.titel}</h2>
                             <p>Distance: {value.distance}</p>
-                            <button>
-                                <Link to='/more-details'>More details</Link>
-                            </button>
-                            <button onClick={() => value.accepted=false}><img src={decline} alt="Cancel" /></button>
+                            <div className="buttons">
+                                <button>
+                                    <Link to='/more-details'><img src={more} alt="More" /></Link>
+                                </button>
+                                <button onClick={() => value.accepted = false}><img src={cancel} alt="Cancel" /></button>
+                            </div>
                         </div>
                     ) : null;
                 })

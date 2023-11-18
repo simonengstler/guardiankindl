@@ -38,7 +38,7 @@ const MoreDetails = () => {
                     <div>
                         <h3>Placeholder: Map</h3>
                     </div>
-                    <h3>Title: {ourEvents[customString]['titel']}</h3>
+                    <h3>Title: {ourEvents[customString]['title']}</h3>
                     <ul>
                         <li>Location: {ourEvents[customString]['street']}</li>
                         <li>Helpers: {ourEvents[customString]['helpersRegistered']}</li>

@@ -29,19 +29,22 @@ const AcceptedEvents = () => {
 
     return (
         <div>
-            <h2>Accepted Events</h2>
-            {Object.values(events).map((value) => {
-                return value.accepted ? (
-                    <div key={value.titel} className="event-tile">
-                        <h3>{value.titel}</h3>
-                        <p>Distance: {value.distance}</p>
-                        <button>
-                            <Link to='/more-details'>More details</Link>
-                        </button>
-                        <button onClick={() => value.accepted=false}><img src={decline} alt="Cancel" /></button>
-                    </div>
-                ) : null;
-            })}
+            {Object.values(events).length > 0 ? (
+                Object.values(events).map((value) => {
+                    return value.accepted ? (
+                        <div key={value.titel} className="event-tile">
+                            <h3>{value.titel}</h3>
+                            <p>Distance: {value.distance}</p>
+                            <button>
+                                <Link to='/more-details'>More details</Link>
+                            </button>
+                            <button onClick={() => value.accepted=false}><img src={decline} alt="Cancel" /></button>
+                        </div>
+                    ) : null;
+                })
+            ) : (
+                <p className="text-xl font-semibold mt-8">Currently no events available</p>
+            )}
         </div>
     );
 };

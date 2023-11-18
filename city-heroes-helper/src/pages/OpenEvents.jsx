@@ -28,7 +28,7 @@ const OpenEvents = () => {
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h2 className="text-3xl font-semibold mb-8">Open Events</h2>
             {Object.entries(events).map(([key, value]) => (
-                <div key={index} className="event-tile my-4 p-6 border border-gray-200 rounded-lg text-center bg-white">
+                <div className="event-tile my-4 p-6 border border-gray-200 rounded-lg text-center bg-white">
                     <h3 className="text-xl font-semibold mb-4">{value.titel}</h3>
                     <p className="text-md text-gray-700">Distance: {value.distance}</p>
                     <div className="flex justify-center mt-4 space-x-4">
@@ -41,7 +41,7 @@ const OpenEvents = () => {
                             </Link>
                         </button>
                         {value.accepted ? (
-                            <button onClick={() => console.log('Cancel clicked')}>Cancel</button>
+                            <button onClick={() => value.accepted = false}>Cancel</button>
                         ) : (
                             <>
                         <button

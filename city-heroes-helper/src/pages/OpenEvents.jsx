@@ -25,21 +25,27 @@ const OpenEvents = () => {
     }, []); // The empty dependency array ensures that the effect runs only once on mount
 
     return (
-        <div>
-            <h2>Open Events</h2>
-            {Object.values(events).map((value) => (
-                <div key={value.titel} className="event-tile">
-                    <h3>{value.titel}</h3>
-                    <p>Distance: {value.distance}</p>
-                    <button>
-                        <Link to='/more-details'>More details</Link>
-                    </button>
-                    <button onClick={() => value.accepted=true}>Accept</button>
-                    <button onClick={() => console.log('Decline clicked')}>Decline</button>
-                </div>
-            ))}
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+          <h2 className="text-3xl font-semibold mb-8">Open Events</h2>
+          {Object.values(events).map((value, index) => (
+            <div key={index} className="event-tile my-4 p-6 border border-gray-200 rounded-lg text-center bg-white">
+              <h3 className="text-xl font-semibold mb-4">{value.titel}</h3>
+              <p className="text-md text-gray-700">Distance: {value.distance}</p>
+              <div className="flex justify-center mt-4 space-x-4">
+                <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
+                  <Link to='/more-details'>More details</Link>
+                </button>
+                <button className="bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-600 transition duration-300" onClick={() => value.accepted = true}>
+                  Accept
+                </button>
+                <button className="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition duration-300" onClick={() => console.log('Decline clicked')}>
+                  Decline
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-    );
-};
+      );
+}
 
 export default OpenEvents;

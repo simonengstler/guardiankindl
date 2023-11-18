@@ -35,8 +35,7 @@ const AcceptedEvents = () => {
                         <button>
                             <Link to='/more-details'>More details</Link>
                         </button>
-                        <button onClick={() => console.log('Accept clicked')}>Accept</button>
-                        <button onClick={() => console.log('Decline clicked')}>Decline</button>
+                        <button onClick={() => value.accepted=false}>Cancel</button>
                     </div>
                 ) : null;
             })}

@@ -49,7 +49,10 @@ const App = () => {
             <div>
                 <Routes>
                     <Route path="open-events" element={<OpenEvents/>}/>
-                    <Route path="more-details" element={<MoreDetails/>}/>
+                    <Route
+                        path="more-details"
+                        element={<MoreDetails receivedEvent={receivedEvent} />} // Pass receivedEvent as a prop
+                    />
                     <Route path="profile" element={<Profile/>}/>
                     <Route path="accepted-events" element={<AcceptedEvents/>}/>
                     {/* TODO: Add default route or 404 page */}

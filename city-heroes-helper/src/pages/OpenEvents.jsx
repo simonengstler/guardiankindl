@@ -27,15 +27,26 @@ const OpenEvents = () => {
     return (
         <div>
             <h2>Open Events</h2>
-            {Object.values(events).map((value) => (
-                <div key={value.titel} className="event-tile">
+            {Object.entries(events).map(([key, value]) => (
+                <div key={key} className="event-tile">
                     <h3>{value.titel}</h3>
                     <p>Distance: {value.distance}</p>
                     <button>
-                        <Link to='/more-details'>More details</Link>
+                        <Link
+                            to="/more-details"
+                            state={{ customString: key }}
+                        >
+                            More details
+                        </Link>
                     </button>
-                    <button onClick={() => value.accepted=true}>Accept</button>
-                    <button onClick={() => console.log('Decline clicked')}>Decline</button>
+                    {value.accepted ? (
+                        <button onClick={() => console.log('Cancel clicked')}>Cancel</button>
+                    ) : (
+                        <>
+                            <button onClick={() => value.accepted=true}>Accept</button>
+                            <button onClick={() => value.accepted=false}>Decline</button>
+                        </>
+                    )}
                 </div>
             ))}
         </div>

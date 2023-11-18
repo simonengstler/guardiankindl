@@ -25,7 +25,7 @@ header {
 .buttons{
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 4px;
   margin-right: -10px;
   margin-left: -10px;
@@ -57,7 +57,7 @@ h1 {
 }
 
 h2{
-  font-size: 30pt;
+  font-size: 20pt;
   margin-bottom: -15pt;
 }
 
@@ -86,7 +86,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

@@ -5,6 +5,7 @@ import { getAllEvents } from '../assets/store';
 import accept from '../assets/accept.png';
 import decline from '../assets/decline.png';
 import more from '../assets/more.png';
+import icon from '../assets/app-icon.png';
 
 const OpenEvents = () => {
     const [events, setEvents] = useState(getAllEvents());
@@ -30,7 +31,10 @@ const OpenEvents = () => {
 
     return (
         <div>
-            <h1>Open Events</h1>
+            <header>
+                <img src={icon} alt="icon" style={{ height: '40px', width: '40px' }} />
+                <h1>Open Events</h1>
+            </header>
             {Object.entries(events).length > 0 ? (
                 Object.entries(events).map(([key, value]) => (
                     <div key={key} className="event-tile my-4 p-6 border border-gray-200 rounded-lg text-center bg-white">
@@ -66,6 +70,7 @@ const OpenEvents = () => {
             ) : (
                 <p className="text-xl text-center font-semibold mt-8">Lean back, everything is fine for now. Thank you for being a CITY HERO! 🤩</p>
             )}
+            <br/><br/>
         </div>
     );
 };

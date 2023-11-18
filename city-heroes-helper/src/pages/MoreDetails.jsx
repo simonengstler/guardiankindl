@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { getAllEvents } from '../assets/store';
 import React, { useState, useEffect } from 'react';
 
+import icon from '../assets/app-icon.png';
+
+
 
 const MoreDetails = () => {
     //const { title, location, timeSlot, additionalInfo } = eventDetails;
@@ -33,12 +36,11 @@ const MoreDetails = () => {
 
     return (
         <div>
-            <h2>Event-Details</h2>
+            <header>
+                <img src={icon} alt="icon" style={{ height: '40px', width: '40px' }} />
+                <h1>Event-Details</h1>
+            </header>
                 <div className="event-tile">
-                    <div>
-                        <h3>Placeholder: Map</h3>
-                    </div>
-                    <h3>Title: {ourEvents[customString]['title']}</h3>
                     <ul>
                         <li>Location: {ourEvents[customString]['street']}</li>
                         <li>Helpers: {ourEvents[customString]['helpersRegistered']}</li>

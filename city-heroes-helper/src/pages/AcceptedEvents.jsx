@@ -4,6 +4,8 @@ import { getAllEvents } from '../assets/store';
 
 import more from '../assets/more.png';
 import cancel from '../assets/cancel.png';
+import icon from '../assets/app-icon.png';
+
 
 const AcceptedEvents = () => {
     const [events, setEvents] = useState(getAllEvents());
@@ -29,6 +31,10 @@ const AcceptedEvents = () => {
 
     return (
         <div>
+            <header>
+                <img src={icon} alt="icon" style={{ height: '40px', width: '40px' }} />
+                <h1>My Events</h1>
+            </header>
             {Object.values(events).length > 0 ? (
                 Object.values(events).map((value) => {
                     return value.accepted ? (

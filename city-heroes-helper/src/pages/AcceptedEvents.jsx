@@ -43,7 +43,7 @@ const AcceptedEvents = () => {
                     ) : null;
                 })
             ) : (
-                <p className="text-xl font-semibold mt-8">Currently no events available</p>
+                <p className="text-xl text-center font-semibold mt-8">Lean back, everything is fine for now. Thank you for being a CITY HERO! 🤩</p>
             )}
         </div>
     );

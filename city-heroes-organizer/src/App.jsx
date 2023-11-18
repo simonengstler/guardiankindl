@@ -47,11 +47,11 @@ const MyComponent = () => {
           timeslot: timeslot,
           helpersRegistered: helpersRegistered,
           description: description,
+          accepted: false,
         }),
       });
 
-      const data = await response.json();
-      setResponseMessage(data.message); // assuming the API returns a message
+      setResponseMessage('Event sent successfully.');
     } catch (error) {
       console.error('Error:', error);
       setResponseMessage('An error occurred while processing your request.');

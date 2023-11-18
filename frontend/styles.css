@@ -1,0 +1,13 @@
+.floating-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* Hintergrundfarbe der Kopfzeile anpassen */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für Effekt hinzufügen */
+    z-index: 1000; /* Z-Index festlegen, um sicherzustellen, dass die Kopfzeile über anderen Inhalten liegt */
+}
+.content {
+    padding-top: 70px; /* Platz für die schwebende Kopfzeile schaffen, damit der Inhalt nicht hinter der Kopfzeile verschwindet */
+}

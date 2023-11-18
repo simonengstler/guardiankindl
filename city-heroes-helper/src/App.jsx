@@ -7,6 +7,7 @@ import MoreDetails from './pages/MoreDetails'; // Import the MoreDetails compone
 import Profile from './pages/Profile'; // Import the Profile component
 import AcceptedEvents from './pages/AcceptedEvents'; // Import the AcceptedEvents component
 import { addEvent } from './assets/store';
+import { getAllEvents } from './assets/store';
 
 const App = () => {
     const [receivedEvent, setReceivedEvent] = useState(null);
@@ -40,7 +41,7 @@ const App = () => {
         <Router>
             <div>
                 <Routes>
-                    <Route path="/" element={<OpenEvents />} />
+                    <Route path="open-events" element={<OpenEvents />} />
                     <Route path="more-details" element={<MoreDetails />} />
                     <Route path="profile" element={<Profile />} />
                     <Route path="accepted-events" element={<AcceptedEvents />} />

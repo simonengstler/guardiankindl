@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
-import MoreDetails from './MoreDetails';
-import {Link, Route} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getAllEvents } from '../assets/store';
+
 const OpenEvents = () => {
+    const [events, setEvents] = useState(getAllEvents());
 
-    const events = [
-        { title: 'Event 1', distance: '5 km', location: 'Location 1', timeSlot: '10:00 AM', additionalInfo: 'Sample info for Event 1' },
-        { title: 'Event 2', distance: '10 km', location: 'Location 2', timeSlot: '2:00 PM', additionalInfo: 'Sample info for Event 2' },
-        { title: 'Event 3', distance: '8 km', location: 'Location 3', timeSlot: '5:00 PM', additionalInfo: 'Sample info for Event 3' },
-    ];
+    const refreshEvents = () => {
+        // Call your synchronous function to get updated events
+        const updatedEvents = getAllEvents();
+        setEvents(updatedEvents);
+    };
 
-    const pageName = '/open-events';
+    useEffect(() => {
+        // Fetch events when the component mounts
+        refreshEvents();
+
+        // Set up an interval to fetch events periodically (every 5 seconds in this example)
+        const intervalId = setInterval(() => {
+            refreshEvents();
+        }, 5000); // Adjust the interval as needed (in milliseconds)
+
+        // Clean up the interval when the component unmounts
+        return () => clearInterval(intervalId);
+    }, []); // The empty dependency array ensures that the effect runs only once on mount
 
     return (
         <div>
             <h2>Open Events</h2>
-            {events.map((event, index) => (
-                <div key={index} className="event-tile">
-                    <h3>{event.title}</h3>
-                    <p>Distance: {event.distance}</p>
+            {Object.values(events).map((value) => (
+                <div key={value.titel} className="event-tile">
+                    <h3>{value.titel}</h3>
+                    <p>Distance: {value.distance}</p>
                     <button>
                         <Link to='/more-details'>More details</Link>
                     </button>

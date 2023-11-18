@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
 import OpenEvents from './pages/OpenEvents';
+import MoreDetails from './pages/MoreDetails'; // Import the MoreDetails component
+import Profile from './pages/Profile'; // Import the Profile component
+import AcceptedEvents from './pages/accepted-events'; // Import the AcceptedEvents component
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState('OpenEvents');
-
-    const renderPage = () => {
-        switch (currentPage) {
-            case 'OpenEvents':
-                return <OpenEvents />;
-            case 'MoreDetails':
-                return <MoreDetails />
-            // TODO: Add profile & Accepted Events Page
-            default:
-                return null;
-        }
-    };
-
     return (
-        <div>
-            {renderPage()}
-            <footer className="ios-footer">
-                <button onClick={() => setCurrentPage('AcceptedEvents')}>Accepted Events</button>
-                <button onClick={() => setCurrentPage('OpenEvents')}>Open Events</button>
-                <button onClick={() => setCurrentPage('Profile')}>Profile</button>
-            </footer>
-        </div>
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="open-events" element={<OpenEvents />} />
+                    <Route path="more-details" element={<MoreDetails />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="accepted-events" element={<AcceptedEvents />} />
+                    {/* TODO: Add default route or 404 page */}
+                </Routes>
+                <footer className="ios-footer">
+                    <Link to="/accepted-events">Accepted Events</Link>
+                    <Link to="/open-events">Open Events</Link>
+                    <Link to="/profile">Profile</Link>
+                </footer>
+            </div>
+        </Router>
     );
 };
 

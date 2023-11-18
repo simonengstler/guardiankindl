@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MoreDetails from './MoreDetails';
 import {Link, Route} from "react-router-dom";
 
-const OpenEvents = () => {
+const AcceptedEvents = () => {
 
     const events = [
         { title: 'Event 1', distance: '5 km', location: 'Location 1', timeSlot: '10:00 AM', additionalInfo: 'Sample info for Event 1' },
@@ -12,7 +12,7 @@ const OpenEvents = () => {
 
     return (
         <div>
-            <h2>Open Events</h2>
+            <h2>Accepted Events</h2>
             {events.map((event, index) => (
                 <div key={index} className="event-tile">
                     <h3>{event.title}</h3>
@@ -26,4 +26,4 @@ const OpenEvents = () => {
     );
 };
 
-export default OpenEvents;
+export default AcceptedEvents;

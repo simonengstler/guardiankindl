@@ -68,7 +68,7 @@ const OpenEvents = () => {
                     </div>
                 ))
             ) : (
-                <p className="text-xl text-center font-semibold mt-8">Lean back, everything is fine for now. Thank you for being a CITY HERO! 🤩</p>
+                <p className="text-xl text-center align-middle font-semibold mt-8"><br/><br/><br/><br/><br/><br/><br/><br/>Lean back, everything is fine for now. Thank you for being a CITY HERO! 🤩</p>
             )}
             <br/><br/>
         </div>

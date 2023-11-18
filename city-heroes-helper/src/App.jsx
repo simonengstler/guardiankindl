@@ -12,6 +12,7 @@ import {getAllEvents} from './assets/store';
 
 import current from './assets/current_inactive.png';
 import my from './assets/my_inactive.png';
+import handshake from './assets/handshake.svg';
 import profile from './assets/profile_inactive.png';
 
 const App = () => {
@@ -62,7 +63,7 @@ const App = () => {
                     {/* TODO: Add default route or 404 page */}
                 </Routes>
                 <footer className="ios-footer">
-                    <Link to="/accepted-events"><img src={my} alt = "accepted" /></Link>
+                    <Link to="/accepted-events"><img src={handshake} alt = "accepted" /></Link>
                     <Link to="/open-events"><img src={current} alt = "current" /></Link>
                     <Link to="/profile"><img src={profile} alt = "profile" /></Link>
                 </footer>

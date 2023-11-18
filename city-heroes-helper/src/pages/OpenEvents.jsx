@@ -34,7 +34,7 @@ const OpenEvents = () => {
                     <button>
                         <Link to='/more-details'>More details</Link>
                     </button>
-                    <button onClick={() => console.log('Accept clicked')}>Accept</button>
+                    <button onClick={() => value.accepted=true}>Accept</button>
                     <button onClick={() => console.log('Decline clicked')}>Decline</button>
                 </div>
             ))}

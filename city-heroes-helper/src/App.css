@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column; /* To stack tiles vertically */
-  justify-content: center; /* Align items vertically */
-  align-items: center; /* Align items horizontally */
+  justify-content: top; /* Align items vertically */
+  align-items: left; /* Align items horizontally */
   text-align: left;
 }
 
@@ -23,6 +23,26 @@ body {
   margin-bottom: 30px;
   border-radius: 10pt;
   background-image: url('./assets/Card1.png');
+  background-size: cover; /* Ensures the background image covers the entire div */
+  background-position: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.detail-tile {
+  height: 1000px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  padding: 10pt;
+  padding-top: 230pt;
+  padding-right: 30pt;
+  padding-left: 30pt;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  border-radius: 10pt;
+  background-image: url('./assets/Card2.png');
   background-size: cover; /* Ensures the background image covers the entire div */
   background-position: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);

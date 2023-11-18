@@ -52,7 +52,6 @@ const OpenEvents = () => {
                             ) : (
                                 <>
                                     <button
-                                        className="text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300"
                                         onClick={() => { value.accepted = true }}
                                     >
                                         <Link to="/accepted-events" state={{ customString: key }}>
@@ -61,7 +60,6 @@ const OpenEvents = () => {
                                     </button>
 
                                     <button
-                                        className="text-white py-2 px-6 rounded-md hover:bg-red-600 transition duration-300"
                                         onClick={() => value.accepted = false}>
                                         <img src={decline} alt="Cancel" />
                                     </button>

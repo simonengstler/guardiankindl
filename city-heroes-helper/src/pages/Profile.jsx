@@ -10,9 +10,9 @@ const OpenEvents = () => {
 
     return (
     <div className="flex justify-center items-center h-screen">
-        <div className="bg-gray-100 px-12 pt-48 rounded-lg shadow-md h-full w-screen">
+        <div className="bg-gray-100 px-8 pt-48 rounded-lg shadow-md h-full w-screen">
                 {/* Profile Picture */}
-                <div className="flex items-center">
+                <div className="flex items-center bg-white px-8 py-3 rounded-xl mb-4">
                     <div className="h-20 w-20 rounded-full overflow-hidden">
                         <img
                             className="object-cover w-full h-full"
@@ -26,7 +26,8 @@ const OpenEvents = () => {
                     </div>
                 </div>
                 {/* Adjustable Distance */}
-                <div className="mt-4">
+                <div className='bg-white px-8 py-3 rounded-xl'>
+                <div className="mt-4 ">
                     <h3 className="text-lg font-semibold mb-2">Maximum Distance</h3>
                     <input
                         type="range"
@@ -71,8 +72,9 @@ const OpenEvents = () => {
                         <span className="slider round"></span>
                     </label>
                 </div>
+                </div>
                 {/* Notification Settings */}
-                <div className="mt-4">
+                <div className="mt-4 bg-white px-8 py-3 rounded-xl">
                     <h3 className="text-lg font-semibold mb-2">Notification Settings &rarr;</h3>
                     {/* Implement notification settings UI */}
                     {/* Example: Toggle switches, dropdowns */}

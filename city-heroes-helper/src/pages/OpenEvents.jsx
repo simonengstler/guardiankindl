@@ -4,6 +4,7 @@ import { getAllEvents } from '../assets/store';
 
 import accept from '../assets/accept.png';
 import decline from '../assets/decline.png';
+import cancel from '../assets/cancel.png';
 import more from '../assets/more.png';
 import icon from '../assets/app-icon.png';
 
@@ -47,18 +48,20 @@ const OpenEvents = () => {
                                 </Link>
                             </button>
                             {value.accepted ? (
-                                <button onClick={() => value.accepted = false}><img src={decline} alt="Cancel" /></button>
+                                <button onClick={() => value.accepted = false}><img src={cancel} alt="Cancel" /></button>
                             ) : (
                                 <>
                                     <button
-                                        className="bg-green-500 text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300"
+                                        className="text-white py-2 px-6 rounded-full hover:bg-green-600 transition duration-300"
                                         onClick={() => { value.accepted = true }}
                                     >
-                                        <img src={accept} alt="Accept" />
+                                        <Link to="/accepted-events" state={{ customString: key }}>
+                                            <img src={accept} alt="Accept" />
+                                        </Link>
                                     </button>
 
                                     <button
-                                        className="bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 transition duration-300"
+                                        className="text-white py-2 px-6 rounded-md hover:bg-red-600 transition duration-300"
                                         onClick={() => value.accepted = false}>
                                         <img src={decline} alt="Cancel" />
                                     </button>

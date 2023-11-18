@@ -2,34 +2,33 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import OpenEvents from './pages/OpenEvents';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [currentPage, setCurrentPage] = useState('OpenEvents');
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const renderPage = () => {
+        switch (currentPage) {
+            case 'OpenEvents':
+                return <OpenEvents />;
+            case 'MoreDetails':
+                return <MoreDetails />
+            // TODO: Add profile & Accepted Events Page
+            default:
+                return null;
+        }
+    };
 
-export default App
+    return (
+        <div>
+            {renderPage()}
+            <footer className="ios-footer">
+                <button onClick={() => setCurrentPage('AcceptedEvents')}>Accepted Events</button>
+                <button onClick={() => setCurrentPage('OpenEvents')}>Open Events</button>
+                <button onClick={() => setCurrentPage('Profile')}>Profile</button>
+            </footer>
+        </div>
+    );
+};
+
+export default App;

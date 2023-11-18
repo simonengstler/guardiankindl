@@ -4,13 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-<<<<<<< Updated upstream
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #f8f8f8;
-=======
   color: #000000;
-  background-color: #ffffff;
->>>>>>> Stashed changes
+  background-color: #eeeef0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,12 +42,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-<<<<<<< Updated upstream
-  background-color: #f5f5f5;
-=======
   background-color: #f7f7f7;
   color: #000000;
->>>>>>> Stashed changes
   cursor: pointer;
   transition: border-color 0.25s;
 }

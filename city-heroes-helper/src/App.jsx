@@ -6,12 +6,14 @@ import OpenEvents from './pages/OpenEvents';
 import MoreDetails from './pages/MoreDetails'; // Import the MoreDetails component
 import Profile from './pages/Profile'; // Import the Profile component
 import AcceptedEvents from './pages/AcceptedEvents'; // Import the AcceptedEvents component
+import NotificationModal from './components/NotificationModal'; // Import the NotificationModal component
 import { addEvent } from './assets/store';
 import { getAllEvents } from './assets/store';
 
 const App = () => {
     const [receivedEvent, setReceivedEvent] = useState(null);
-   
+    const [showNotification, setShowNotification] = useState(false);
+
     useEffect(() => {
         const ws = new WebSocket('ws://localhost:3001');
     
@@ -23,6 +25,7 @@ const App = () => {
           const parsedEvent = JSON.parse(event.data);
           setReceivedEvent(parsedEvent);
           addEvent(parsedEvent); // Add the received event to the events map
+          setShowNotification(true); // Show notification when a new event is received
         };
     
         ws.onclose = () => {
@@ -36,6 +39,10 @@ const App = () => {
       }, []);
 
     console.log('receivedEvent', receivedEvent)
+
+    const closeNotification = () => {
+        setShowNotification(false);
+      };
 
     return (
         <Router>
@@ -52,6 +59,11 @@ const App = () => {
                     <Link to="/open-events">Open Events</Link>
                     <Link to="/profile">Profile</Link>
                 </footer>
+                {showNotification && (
+                <div className="notification-container">
+                    <NotificationModal event={receivedEvent} onClose={closeNotification} />
+                </div>
+                )}
             </div>
         </Router>
     );

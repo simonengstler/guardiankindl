@@ -69,6 +69,8 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
+.city-heroes-helper/node_modules
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -128,3 +130,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.idea/
+

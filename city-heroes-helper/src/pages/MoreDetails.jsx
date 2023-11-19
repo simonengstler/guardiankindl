@@ -50,11 +50,14 @@ const MoreDetails = () => {
                     <li>Description: {ourEvents[customString]['description']}</li>
                 </ul>
                 {ourEvents[customString]['accepted'] ? (
-                    <button onClick={() => ourEvents[customString]['accepted'] = false}><img src={cancel} alt="Cancel" /></button>
+                    <button onClick={() => {ourEvents[customString]['accepted'] = false}}>
+                        <Link to='/open-events'>
+                            <img src={cancel} alt="Cancel"/>
+                        </Link>
+                    </button>
                 ) : (
                     <>
                         <div className="buttons">
-
                             <button onClick={() => value.accepted = true}><img src={accept} alt="Accept" /></button>
                             <button onClick={() => value.accepted = false}><img src={decline} alt="Decline" /></button>
                         </div>

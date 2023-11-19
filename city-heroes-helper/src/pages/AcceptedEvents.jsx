@@ -55,7 +55,7 @@ const AcceptedEvents = () => {
                     ) : null;
                 })
             ) : (
-                <p className="text-xl text-center font-semibold mt-8">Lean back, everything is fine for now. Thank you
+                <p className="text-xl text-center font-semibold mt-8"><br/><br/><br/><br/><br/><br/><br/><br/>Lean back, everything is fine for now. Thank you
                     for being a CITY HERO! 🤩</p>
             )}
         </div>

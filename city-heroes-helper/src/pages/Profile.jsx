@@ -1,81 +1,66 @@
-import React, { useState } from 'react';
-import '../styles/toggleSwitch.css';
+import React, {useState} from 'react';
+import '../styles/toggleSwitch.css'; // Make sure to import the new CSS file
+import '../styles/profile.css'; // Make sure to import the new CSS file
 
 const OpenEvents = () => {
-    const [distance, setDistance] = useState(40); // Initial distance value
+    const [distance, setDistance] = useState(40);
 
     const handleDistanceChange = (event) => {
         setDistance(event.target.value);
     };
 
     return (
-    <div className="flex justify-center items-center h-screen">
-        <div className="bg-gray-100 px-8 pt-48 rounded-lg shadow-md h-full w-screen">
+        <div className="flex-container">
+            <div className="">
                 {/* Profile Picture */}
-                <div className="flex items-center bg-white px-8 py-3 rounded-xl mb-4">
-                    <div className="h-20 w-20 rounded-full overflow-hidden">
-                        <img
-                            className="object-cover w-full h-full"
-                            src="default_profilepicture.jpg"
-                            alt="Profile"
-                        />
+                <div className="profile-container">
+                    <div className="profile-image">
+                        <img src="default_profilepicture.jpg" alt="Profile"/>
                     </div>
-                    <div className="ml-4">
-                        <h2 className="text-lg font-semibold">Samuel Sacher &rarr;</h2>
-                        <p className="text-sm text-gray-500">Registered via e-ID</p>
+                    <div className="profile-info">
+                        <h2 className="heading">Samuel Sacher &rarr;</h2>
+                        <p className="small-text">Registered via e-ID</p>
                     </div>
                 </div>
                 {/* Adjustable Distance */}
-                <div className='bg-white px-8 py-3 rounded-xl'>
-                <div className="mt-4 ">
-                    <h3 className="text-lg font-semibold mb-2">Maximum Distance</h3>
+                <div className='adjustable-distance'>
+                    <h3 className="heading mb-2">Maximum Distance</h3>
                     <input
                         type="range"
                         min={1}
                         max={100}
                         value={distance}
                         onChange={handleDistanceChange}
-                        className="w-full"
+                        className="range-input"
                     />
-                    <p className="text-sm text-gray-500 text-right mt-2">{distance} km</p>
+                    <p className="small-text range-value">{distance} km</p>
+                    {/* Checkboxes */}
+                    <div className="checkbox-group">
+                        <label className="checkbox-label">Social Tasks</label>
+                        <label className="switch">
+                            <input type="checkbox" name="social" defaultChecked/>
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
+                    <div className="checkbox-group">
+                        <label className="checkbox-label">Physical Work</label>
+                        <label className="switch">
+                            <input type="checkbox" name="physical" defaultChecked/>
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
+                    <div className="checkbox-group">
+                        <label className="checkbox-label">Logistics</label>
+                        <label className="switch">
+                            <input type="checkbox" name="logistics"/>
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
                 </div>
-                {/* Checkboxes */}
-                <div className="flex flex-col">
-                    <label className="mb-2">Social Tasks</label>
-                    <label className="switch">
-                        <input
-                            type="checkbox"
-                            name="social"
-                            defaultChecked
-                        />
-                        <span className="slider round"></span>
-                    </label>
-                </div>
-                <div className="flex flex-col">
-                    <label className="mb-2">Physical Work</label>
-                    <label className="switch">
-                        <input
-                            type="checkbox"
-                            name="physical"
-                            defaultChecked
-                        />
-                        <span className="slider round"></span>
-                    </label>
-                </div>
-                <div className="flex flex-col">
-                    <label className="mb-2">Logistics</label>
-                    <label className="switch">
-                        <input
-                            type="checkbox"
-                            name="logistics"
-                        />
-                        <span className="slider round"></span>
-                    </label>
-                </div>
-                </div>
+
                 {/* Notification Settings */}
-                <div className="mt-4 bg-white px-8 py-3 rounded-xl">
-                    <h3 className="text-lg font-semibold mb-2">Notification Settings &rarr;</h3>
+                <div className="notification-settings">
+                    <h3 className="heading mb-2">Notification Settings &rarr;</h3>
                     {/* Implement notification settings UI */}
                     {/* Example: Toggle switches, dropdowns */}
                 </div>

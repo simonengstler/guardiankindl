@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column; /* To stack tiles vertically */
-  justify-content: top; /* Align items vertically */
-  align-items: left; /* Align items horizontally */
+  justify-content: start; /* Align items vertically */
+  align-items: start; /* Align items horizontally */
   text-align: left;
 }
 

@@ -44,7 +44,7 @@ a:hover {
 body {
   margin: 15pt;
   display: flex;
-  place-items: left;
+  place-items: start;
   min-width: 320px;
   min-height: 100vh;
 }

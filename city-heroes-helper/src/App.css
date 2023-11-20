@@ -29,14 +29,14 @@ body {
 }
 
 .detail-tile {
-  height: 1000px;
+  height: 500px;
   border: 1px solid #ccc;
   padding: 10px;
   display: flex;
   flex-direction: column;
   width: 90vw;
   padding: 10pt;
-  padding-top: 230pt;
+  padding-top: 150pt;
   padding-right: 30pt;
   padding-left: 30pt;
   box-sizing: border-box;

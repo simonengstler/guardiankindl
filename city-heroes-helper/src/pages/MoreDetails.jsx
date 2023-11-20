@@ -44,11 +44,13 @@ const MoreDetails = () => {
                 <h1>Event-Details</h1>
             </header>
             <div className="detail-tile">
-                <ul>
-                    <li>Location: {ourEvents[customString]['street']}</li>
-                    <li>Helpers: {ourEvents[customString]['helpersRegistered']}</li>
-                    <li>Description: {ourEvents[customString]['description']}</li>
-                </ul>
+                <h2>Isar flooding</h2>
+                <br/>
+                <b>At: {ourEvents[customString]['street']}</b>
+                <b>Persons: {ourEvents[customString]['helpersRegistered']}</b>
+                {ourEvents[customString]['description']}
+                <br/>
+                <br/>
                 {ourEvents[customString]['accepted'] ? (
                     <button onClick={() => {ourEvents[customString]['accepted'] = false}}>
                         <Link to='/open-events'>
